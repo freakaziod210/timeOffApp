@@ -1,0 +1,4 @@
+{
+  "directory": "bower_components",
+  "shorthand-resolver": "git@git.empdev.domo.com:{{shorthand}}.git"
+}

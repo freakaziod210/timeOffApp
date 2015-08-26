@@ -1,0 +1,3 @@
+var AutoWidgets={widgetRegistry:[]}
+AutoWidgets.baseWidget=function(t){return t.dataName=function(e){return arguments.length?(t._dataName=e,t):t._dataName},t.renderWithData=function(){return t.draw($badge.data[t.dataName()].val()),t},t},AutoWidgets.findWidgets=function(t){for(var e=[],i=0;i<AutoWidgets.widgetRegistry.length;i++){var a=AutoWidgets.widgetRegistry[i]
+t.selectAll("[id^="+a[0]+"]").each(function(){e.push(a[1](d3.select(this)))})}return e.renderAll=function(){for(var t=0;t<e.length;t++)e[t].renderWithData()},e},AutoWidgets.register=function(t,e){AutoWidgets.widgetRegistry.push([t,e])}

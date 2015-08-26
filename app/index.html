@@ -1,0 +1,75 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="timeOffApp">
+    <div id="appContainer">
+
+      <!-- Add your site or application content here -->
+      <!-- extract:body -->
+      <div id="appFrame">
+        <div id="mainContainer" ng-controller="SidebarCtrl">
+          <side-bar config="sidebar">
+            <side-bar-drawer name="options">
+              Options
+            </side-bar-drawer>
+            <side-bar-drawer name="key">
+              Key
+            </side-bar-drawer>
+          </side-bar>
+          <div id="vis" style="opacity:0;">
+            <div class="view" ui-view=""></div>
+          </div>
+        </div>
+      </div>
+
+      <!--- Site Catalyst -->
+      <script src="//assets.adobedtm.com/d9e9bb9d3d3e09e8b12f49d24b3325c0fdb6f998/satelliteLib-7de7b815f08a7c6a8a97dcd25b3f4288611811f5.js"></script>
+      <!-- endextract -->
+
+    </div>
+
+    <!-- build:js(.) scripts/oldieshim.js -->
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+
+    <!-- Domo Specific stuff -->
+    <script src="domo/AutoWidgets.js"></script>
+    <script src="domo/badge.js"></script>
+    <!-- enddomo -->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- More Domo Specific stuff -->
+    <script src="domo/render.js"></script>
+    <!-- enddomo -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/wire.js"></script>
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/sidebar.js"></script>
+        <script src="scripts/services/dadata.js"></script>
+        <script src="scripts/services/dadql.js"></script>
+        <script src="scripts/services/daevents.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

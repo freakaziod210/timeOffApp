@@ -1,0 +1,29 @@
+{
+  "name": "time-off",
+  "version": "1.0.1",
+  "dependencies": {
+    "angular": "~1.4.0",
+    "lodash": "^2.4.1",
+    "d3": "^3.5.0",
+    "d3.chart": "^0.2.0",
+    "i18n": "DA/i18n#x",
+    "drop": "~0.5.5",
+    "shepherd.js": "~0.5.1",
+    "bootstrap-sass-official": "~3.2.0",
+    "angular-resource": "~1.4.0",
+    "angular-cookies": "~1.4.0",
+    "angular-sanitize": "~1.4.0",
+    "angular-animate": "~1.4.0",
+    "angular-touch": "~1.4.0",
+    "angular-ui-router": "~0.2.11",
+    "da.appFrame": "nick-randall/da.appFrame#~0.0.16",
+    "angular-moment": "~0.8.3",
+    "angulartics": "DA/angulartics"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.0",
+    "angular-scenario": "~1.4.0"
+  },
+  "appPath": "app",
+  "appName": "timeOffApp"
+}
