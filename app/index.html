@@ -8,31 +8,27 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css" />
+    <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick-theme.css" />
+    <link rel="stylesheet" href="bower_components/da.appFrame/dist/styles/main.css" />
+    <link rel="stylesheet" href="bower_components/domo-bits/dist/icon-bits.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/ui-bootstrap-custom-0.13.3-csp.css">
+
+
+
   </head>
   <body ng-app="timeOffApp">
     <div id="appContainer">
 
-      <!-- Add your site or application content here -->
-      <!-- extract:body -->
-      <div id="appFrame">
-        <div id="mainContainer" ng-controller="SidebarCtrl">
-          <side-bar config="sidebar">
-            <side-bar-drawer name="options">
-              Options
-            </side-bar-drawer>
-            <side-bar-drawer name="key">
-              Key
-            </side-bar-drawer>
-          </side-bar>
-          <div id="vis" style="opacity:0;">
-            <div class="view" ui-view=""></div>
-          </div>
-        </div>
+      <div id="vis">
+        <div class="view" ui-view=""></div>
       </div>
 
       <!--- Site Catalyst -->
@@ -55,9 +51,46 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/babel-polyfill/browser-polyfill.js"></script>
+    <script src="bower_components/Query/dist/query.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <!-- // <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script> -->
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/angular-moment/angular-moment.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/slick-carousel/slick/slick.min.js"></script>
+    <script src="bower_components/angular-slick/dist/slick.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angulartics/src/angulartics.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-adobe.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
+    <script src="bower_components/d3/d3.js"></script>
+    <script src="bower_components/d3.chart/d3.chart.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
+    <script src="bower_components/tether/tether.js"></script>
+    <script src="bower_components/drop/drop.js"></script>
+    <script src="bower_components/shepherd.js/shepherd.js"></script>
+    <script src="bower_components/da.appFrame/dist/app.js"></script>
+    <script src="bower_components/domo-bits/dist/domo-bits.js"></script>
+    <script src="bower_components/i18n/dist/i18n.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-
     <!-- More Domo Specific stuff -->
     <script src="domo/render.js"></script>
     <!-- enddomo -->
@@ -65,11 +98,14 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/wire.js"></script>
         <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/sidebar.js"></script>
+        <script src="scripts/controllers/trip.js"></script>
         <script src="scripts/services/dadata.js"></script>
         <script src="scripts/services/dadql.js"></script>
         <script src="scripts/services/daevents.js"></script>
         <!-- endbuild -->
+        <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="scripts/components/ui-bootstrap-custom-0.13.3.js"></script>
+    <script src="scripts/components/ui-bootstrap-custom-tpls-0.13.3.js"></script>
 </body>
 </html>

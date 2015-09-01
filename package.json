@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "dependencies": {},
   "devDependencies": {
-    "domoapps-client": "git+ssh://git@github.com/DomoApps/domoapps-client.git",
+    "ryuu-client": "git+https://github.com/DomoApps/domoapps-client.git",
     "fs-extra": "^0.18.2",
     "glob": "^5.0.5",
     "grunt": "^0.4.1",

@@ -1,4 +1,4 @@
-// Generated on 2015-08-26 using generator-da-angular 0.1.9
+// Generated on 2015-07-30 using generator-da-angular 0.1.9
 'use strict';
 
 // # Globbing
@@ -13,7 +13,7 @@ module.exports = function (grunt) {
 
   var url = require('url');
   var proxy = require('proxy-middleware');
-  var Domo = require('domoapps-client');
+  var Domo = require('ryuu-client');
   var fs = require('fs-extra');
   var glob = require("glob");
   var home = Domo.getHomeDir();
@@ -462,11 +462,6 @@ module.exports = function (grunt) {
           cwd: '.tmp/images',
           dest: '<%= yeoman.dist %>/images',
           src: ['generated/*']
-        }, {
-          expand: true,
-          cwd: '.',
-          src: 'bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*',
-          dest: '<%= yeoman.dist %>'
         }]
       },
       styles: {

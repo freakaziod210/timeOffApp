@@ -1,11 +1,18 @@
 $icon-font-path: '../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/';
 // bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import "domo-bits/src/common/scss/domobits.scss";
 // endbower
 
 @import 'fonts';
 
 // Custom Styles go here
 $font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+$app-container-height: 860px;
+$app-container-width: 1165px;
+$border-width: 1px;
+$border-style: solid;
+$border-color: #CCC;
 
 html {
   padding: 0;
@@ -13,19 +20,59 @@ html {
 }
 
 body {
-  margin: 0px;
-  font-family: $font-family;
-  font-size: 12px;
+
+  #appContainer {
+    position: absolute;
+    width: $app-container-width;
+    height: $app-container-height;
+  }
+
+  #vis {
+    position: absolute;
+    left: 0px;
+    background: #fff;
+    width: $app-container-width;
+    height: $app-container-height;
+    overflow: hidden;
+    border: $border-width $border-style $border-color;
+    opacity: 1;
+  }
 }
 
-svg {
-  overflow: hidden;
-}
 
-// This will mimic your selected badge size in domo.
-#appContainer {
-  position: absolute;
-  width: 1165px;
-  height: 860px;
-  overflow: auto;
+
+.carousel-inner {
+  overflow: visible !important;
+  .carousel-caption {
+    .destination-name {
+      position: relative;
+      top: -400px;
+      left: -300px;
+    }
+
+   .price-section {
+      position: relative;
+      top: -150px;
+      left: -300px;
+   }
+
+   .view-flight {
+      position: relative;
+      top: -100px;
+      left: -300px;
+   }
+
+   .calendar-container {
+      position: relative;
+      // top: -500px;
+      left: 10px;
+
+   }
+
+   .request-time {
+      position: relative;
+      top: -100px;
+      left: 300px;
+   }
+  }
 }

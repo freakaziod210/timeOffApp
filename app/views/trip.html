@@ -1,0 +1,20 @@
+<div>
+	<carousel interval="myInterval" no-wrap="noWrapSlides">
+		<slide ng-repeat="trip in trips">
+			<img ng-src="{{trip.ImageURL}}" style="margin:auto;">
+			<div class="carousel-caption">
+				<h1 class="destination-name">{{trip.DestinationName}}</h1>
+				<div class="price-section">
+					${{trip.Price}} <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span> {{trip.PercentBelowAverage * -1}}%
+				</div>
+				<a class="btn btn-default view-flight" href="{{trip.FlightURL}}" role="button">View Flight</a>
+				<div class="calendar-container">
+					<h3 class="">{{trip.TripStartDate}} - {{trip.TripEndDate}}</h3>
+					<db-datepicker ng-model="currentDate" min-date="minDate" max-date="maxDate" show-weeks="false" close-on-date-selection="false" show-button-bar="false"></db-datepicker>
+				</div>
+				<a class="btn btn-default request-time" href="https://ew31.ultipro.com/Login.aspx?ReturnUrl=%2fpages%2futility%2fnewsession.aspx" role="button">Request Time Off</a>
+				<div class="tickerImages"></div>
+			</div>
+		</slide>
+	</carousel>
+</div>

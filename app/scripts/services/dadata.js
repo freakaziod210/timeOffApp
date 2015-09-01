@@ -8,34 +8,54 @@
  * Factory in the timeOffApp.
  */
 angular.module('timeOffApp')
-  .factory('daData', function ($q) {
+  .factory('daData', function($q) {
     // Private Variables
-    var things = [];
-    var diferred = $q.defer();
+    var self = {};
+    var deferred = $q.defer();
+    var columns = ['Id', 'DestinationId', 'DestinationName', 'DestinationAirportCode', 'Date', 'Price', 'Type', 'Category', 'ImageURL', 'ThingsToDoURL', 'FlightURL', 'TripStartDate', 'TripEndDate', 'TripDuration', 'AverageTicketPrice', 'MaxTicketPrice', 'PercentBelowAverage', 'Rating (1-5)', 'Score'];
 
     // Resolve promise when data is ready
-    $badge.onRender(function () {
-      diferred.resolve(true);
+    $badge.onRender(function() {
+      deferred.resolve(true);
     });
 
-    // Psuedo Code:
-    // Make sure data is ready for you pass it to callback.
-    function asyncGetData (cb) {
-      var callback = cb || angular.noop;
-      if(things.length < 1) {
-        diferred.promise.then(function (){
-          things = $badge.data.grid.val();
-          callback(things);
-        });
-      } else {
-        callback(things);
-      }
-    }
+    self.getData = function() {
+      var query = self.setupDQL('vacations');
 
-    // Public API here
-    // This is just a sample of getting 'thing' data
-    var self = {
-      getThings: asyncGetData
+      return self.badgePromise()
+        .then(function() {
+          return self.executeDQL('vacations', query);
+        }).then(function(data) {
+          return self.zipCollectionToObjects(data.columns, data.rows);
+        });
+    };
+
+    /******************************************************/
+    // Private functions used for fetching the right data.
+    /******************************************************/
+    self.setupDQL = function(gridName) {
+      var query = new Query();
+
+      query.select(columns);
+
+      return query.query();
+    };
+
+    /******************************************************/
+    self.executeDQL = function(gridName, query) {
+      return $badge.data[gridName].dqlQuery(query);
+    };
+
+    /******************************************************/
+    self.zipCollectionToObjects = function(columns, collection) {
+      return collection.map(function(row) {
+        return _.zipObject(columns, row);
+      });
+    };
+
+    /******************************************************/
+    self.badgePromise = function() {
+      return deferred.promise;
     };
 
     return self;
